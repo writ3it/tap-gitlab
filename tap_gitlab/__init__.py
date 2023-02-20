@@ -439,7 +439,7 @@ def sync_merge_requests(project):
 
             # Get the reviewer ids
             reviewer_ids = []
-            for reviewer in row.get("reviewers"):
+            for reviewer in row.get("reviewers") or []:
                 reviewer_ids.append(reviewer["id"])
             row["reviewers"] = reviewer_ids
 
